@@ -1,5 +1,7 @@
 # P2P SOS Relay
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 P2P SOS Relay is an Android application that forms a decentralized, peer-to-peer mesh network using Wi‑Fi Direct to broadcast and relay SOS alerts between nearby devices. It is designed for emergency scenarios where Internet connectivity may be unavailable (natural disasters, remote areas). Devices forward alerts to other peers until a device with Internet access relays the alert to a backend server.
 
 Table of contents
@@ -105,7 +107,6 @@ Certain OEMs implement aggressive battery optimizations which can kill backgroun
 - Lock the app in Recent Apps if supported to prevent the system from killing it.
 
 ## Message schema (example)
-Example SOS payload the app sends between peers and to the backend:
 ```json
 {
   "id": "uuid-or-token",
@@ -121,14 +122,11 @@ Example SOS payload the app sends between peers and to the backend:
 }
 ```
 
-- id: unique identifier for the alert (used for deduplication).
-- hops: number of times the message has been re-broadcast; increment before re-broadcasting.
-
 ## Development notes
 - Use Kotlin Coroutines for networking and discovery tasks to avoid blocking the main thread.
 - Keep socket lifecycle tied to group lifecycle (open ServerSocket when GO, close when GO stops).
 - Validate incoming messages and deduplicate using the alert id.
-- Consider adding a persistent queue (e.g., local DB, Redis) to guarantee delivery if immediate forwarding fails.
+- Consider adding a persistent queue (e.g., local DB) to guarantee delivery if immediate forwarding fails.
 
 ## Contributing
 Contributions are welcome. Suggested workflow:
@@ -140,7 +138,7 @@ Contributions are welcome. Suggested workflow:
 Add a CODE_OF_CONDUCT.md and CONTRIBUTING.md to document contribution expectations and workflow.
 
 ## License
-Add your chosen license file (e.g., MIT). Update this section to reflect the repository license.
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
 ## Contact
 Maintainer: pardeevpatti08
