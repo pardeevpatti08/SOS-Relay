@@ -1,0 +1,18 @@
+
+[versions]
+# ... other versions
+kotlinStdlib = "1.9.23" # Or your chosen version
+coreKtx = "1.12.0"      # Or your chosen version
+appcompat = "1.6.1"     # Or your chosen version
+material = "1.11.0"     # Or your chosen version
+constraintlayout = "2.1.4"
+kotlinxCoroutinesAndroid = "1.7.3"
+
+[libraries]
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlinStdlib" }
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+material = { module = "com.google.android.material:material", version.ref = "material" }
+androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesAndroid" }
+# ... other library aliases
